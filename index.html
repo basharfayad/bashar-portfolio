@@ -4,53 +4,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bashar Fayad - Software Engineer Portfolio">
+    <meta name="theme-color" content="#080811">
     <title>Bashar Fayad | Software Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<section class="skills">
-    <h2>My Technical Skills</h2>
-    <ul id="skillsList"></ul>
-</section>
-<script src="script.js"></script>
 <body>
 
-    <h1>Hello, I'm Bashar Fayad!</h1>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
 
-    <h2>Software Engineer</h2>
+    <header class="navbar">
+        <a href="#home" class="logo">BF<span>.</span></a>
 
-    <p>
-        I am a Software Engineering graduate
-        interested in technology and software development.
-    </p>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="#about" data-en="About" data-ar="عني">About</a>
+            <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
+            <a href="#experience" data-en="Experience" data-ar="الخبرات">Experience</a>
+            <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
+            <a href="#contact" data-en="Contact" data-ar="تواصل معي">Contact</a>
+        </nav>
 
-    <h3>My Goal</h3>
+        <div class="nav-actions">
+            <button class="language-btn" id="languageToggle">عربي</button>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
 
-    <p>
-        Building useful software and growing
-        as a professional software engineer.
-    </p>
+    <main>
+        <!-- HERO -->
+        <section class="hero section" id="home">
+            <div class="hero-content">
+                <div class="availability">
+                    <span class="status-dot"></span>
+                    <span data-en="Software Engineer | Open to Opportunities"
+                          data-ar="مهندس برمجيات | متاح للفرص الوظيفية">
+                        Software Engineer | Open to Opportunities
+                    </span>
+                </div>
 
-<section class="visitor-box">
-    <h2>Welcome to my Portfolio</h2>
+                <p class="eyebrow" data-en="HELLO, I'M" data-ar="مرحباً، أنا">
+                    HELLO, I'M
+                </p>
 
-    <input type="text" id="visitorName"
-           placeholder="Enter your name">
+                <h1>Bashar <span>Fayad.</span></h1>
 
-    <button onclick="greetVisitor()">
-        Say Hello
-    </button>
+                <h2 data-en="Software Engineer & Creative Problem Solver"
+                    data-ar="مهندس برمجيات ومبدع في حل المشكلات">
+                    Software Engineer & Creative Problem Solver
+                </h2>
 
-    <p id="visitorMessage"></p>
-</section>
+            
+
+                <p class="hero-description"
+                   data-en="I build digital experiences, explore innovative technologies, and turn ideas into meaningful solutions."
+                   data-ar="أبني تجارب رقمية، وأستكشف التقنيات المبتكرة، وأحوّل الأفكار إلى حلول تقنية ذات قيمة.">
+                    I build digital experiences, explore innovative technologies,
+                    and turn ideas into meaningful solutions.
+                </p>
+<div class="robot-container">
+    <canvas id="robot-canvas"></canvas>
+</div>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"
+                       data-en="Explore My Work →" data-ar="استكشف أعمالي ←">
+                        Explore My Work →
+                    </a>
+                    <a href="#contact" class="btn btn-secondary"
+                       data-en="Let's Talk" data-ar="تواصل معي">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/basharfayad"
+                       target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    <span>•</span>
+                    <a href="#contact">Contact ↗</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="profile-card">
+                    <div class="profile-symbol">BF<span>.</span></div>
+                    <div class="profile-line"></div>
+                    <p data-en="BUILDING THE FUTURE"
+                       data-ar="نبني المستقبل">BUILDING THE FUTURE</p>
+                    <span class="profile-code">&lt;developer /&gt;</span>
+                </div>
+                <div class="floating-tag tag-one">{"code": "create"}</div>
+                <div class="floating-tag tag-two">01 — 2026</div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section about-section" id="about">
+            <div class="section-heading">
+                <p class="eyebrow" data-en="GET TO KNOW ME" data-ar="تعرف عليّ">GET TO KNOW ME</p>
+                <h2 data-en="About <span>Me</span>" data-ar="نبذة <span>عني</span>">
+                    About <span>Me</span>
+                </h2>
+            </div>
+
+            <div class="about-card">
+                <div class="about-number">01</div>
+                <div>
+                    <h3 data-en="Curiosity drives innovation."
+                        data-ar="الفضول هو بداية الابتكار.">
+                        Curiosity drives innovation.
+                    </h3>
+                    <p data-en="I am a Software Engineering graduate from Üsküdar University, Turkey, with a strong interest in software development, technology, and creative digital experiences. I enjoy learning new tools, solving technical challenges, and developing solutions that make a difference."
+                       data-ar="أنا خريج هندسة البرمجيات من جامعة أوسكودار في تركيا، ولدي اهتمام كبير بتطوير البرمجيات والتكنولوجيا والتجارب الرقمية الإبداعية. أستمتع بتعلم الأدوات الجديدة وحل التحديات التقنية وتطوير حلول تصنع فرقاً.">
+                        I am a Software Engineering graduate from Üsküdar University,
+                        Turkey, with a strong interest in software development,
+                        technology, and creative digital experiences. I enjoy
+                        learning new tools, solving technical challenges, and
+                        developing solutions that make a difference.
+                    </p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <strong>3.21<span>/4</span></strong>
+                    <p data-en="University GPA" data-ar="المعدل الجامعي">University GPA</p>
+                </div>
+                <div class="stat-card">
+                    <strong>2026</strong>
+                    <p data-en="Graduation Year" data-ar="سنة التخرج">Graduation Year</p>
+                </div>
+                <div class="stat-card">
+                    <strong>3</strong>
+                    <p data-en="Languages" data-ar="اللغات">Languages</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section" id="skills">
+            <div class="section-heading">
+                <p class="eyebrow" data-en="MY TOOLKIT" data-ar="أدواتي التقنية">MY TOOLKIT</p>
+                <h2 data-en="Technical <span>Skills</span>" data-ar="المهارات <span>التقنية</span>">
+                    Technical <span>Skills</span>
+                </h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">⌨</div>
+                    <h3 data-en="Web Development" data-ar="تطوير الويب">Web Development</h3>
+                    <p>HTML · CSS · JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">◈</div>
+                    <h3 data-en="Programming" data-ar="البرمجة">Programming</h3>
+                    <p>Java · C/C++</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">▦</div>
+                    <h3 data-en="Database & APIs" data-ar="قواعد البيانات وواجهات API">Database & APIs</h3>
+                    <p>SQL · REST APIs</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">◇</div>
+                    <h3 data-en="3D & Creative Design" data-ar="التصميم الإبداعي وثلاثي الأبعاد">3D & Creative Design</h3>
+                    <p>Blender · 3D Modeling</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">▤</div>
+                    <h3 data-en="Productivity" data-ar="الإنتاجية">Productivity</h3>
+                    <p>Microsoft Word · PowerPoint</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⌘</div>
+                    <h3 data-en="Development Tools" data-ar="أدوات التطوير">Development Tools</h3>
+                    <p>Git · GitHub · VS Code</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="section" id="experience">
+            <div class="section-heading">
+                <p class="eyebrow" data-en="MY JOURNEY" data-ar="مسيرتي المهنية">MY JOURNEY</p>
+                <h2 data-en="Work <span>Experience</span>" data-ar="الخبرات <span>العملية</span>">
+                    Work <span>Experience</span>
+                </h2>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="timeline-date">AUG 2025</div>
+                    <div class="timeline-content">
+                        <h3 data-en="IT Support Intern" data-ar="متدرب دعم فني وتقنية معلومات">
+                            IT Support Intern
+                        </h3>
+                        <h4>United Medical Cotton Factory Company</h4>
+                        <p class="location">Jeddah, Saudi Arabia</p>
+                        <p data-en="Supported technical assistance and daily IT operations, helping maintain reliable workplace technology and resolve technical issues."
+                           data-ar="قدمت الدعم الفني وساهمت في العمليات اليومية لقسم تقنية المعلومات، مع المساعدة في الحفاظ على كفاءة الأنظمة وحل المشكلات التقنية.">
+                            Supported technical assistance and daily IT operations,
+                            helping maintain reliable workplace technology and
+                            resolve technical issues.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-date">JUN – JUL 2024</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Full-Stack Development Intern"
+                            data-ar="متدرب تطوير برمجيات Full-Stack">
+                            Full-Stack Development Intern
+                        </h3>
+                        <h4>Mountains Manaa Water Company</h4>
+                        <p class="location">Tanomah, Saudi Arabia</p>
+                        <p data-en="Worked on web interfaces, backend development tasks, APIs, databases, and software usability as part of the IT department."
+                           data-ar="عملت على واجهات الويب ومهام تطوير الأنظمة الخلفية وواجهات API وقواعد البيانات وتحسين قابلية استخدام البرامج ضمن قسم تقنية المعلومات.">
+                            Worked on web interfaces, backend development tasks,
+                            APIs, databases, and software usability as part of
+                            the IT department.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="section" id="education">
+            <div class="section-heading">
+                <p class="eyebrow" data-en="ACADEMIC BACKGROUND" data-ar="المسيرة الأكاديمية">
+                    ACADEMIC BACKGROUND
+                </p>
+                <h2 data-en="My <span>Education</span>" data-ar="تعليمي <span>الأكاديمي</span>">
+                    My <span>Education</span>
+                </h2>
+            </div>
+
+            <div class="education-card">
+                <div class="education-icon">🎓</div>
+                <div>
+                    <p class="education-year">2022 – 2026</p>
+                    <h3 data-en="Bachelor of Software Engineering"
+                        data-ar="بكالوريوس هندسة البرمجيات">
+                        Bachelor of Software Engineering
+                    </h3>
+                    <h4>Üsküdar University</h4>
+                    <p data-en="Istanbul, Turkey" data-ar="إسطنبول، تركيا">Istanbul, Turkey</p>
+                    <span class="honor-badge"
+                          data-en="High Honor Certificate"
+                          data-ar="شهادة مرتبة الشرف العليا">
+                        High Honor Certificate
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section" id="projects">
+            <div class="section-heading">
+                <p class="eyebrow" data-en="WHAT I'VE BUILT" data-ar="ما قمت بتطويره">
+                    WHAT I'VE BUILT
+                </p>
+                <h2 data-en="Featured <span>Projects</span>" data-ar="أبرز <span>المشاريع</span>">
+                    Featured <span>Projects</span>
+                </h2>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-visual project-visual-one">
+                        <span>&lt; BF /&gt;</span>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-type" data-en="WEB DEVELOPMENT" data-ar="تطوير الويب">
+                            WEB DEVELOPMENT
+                        </p>
+                        <h3 data-en="Personal Portfolio" data-ar="الموقع الشخصي">
+                            Personal Portfolio
+                        </h3>
+                        <p data-en="A bilingual personal portfolio showcasing my background, skills, and professional journey."
+                           data-ar="موقع شخصي ثنائي اللغة يعرض خلفيتي ومهاراتي ومسيرتي المهنية.">
+                            A bilingual personal portfolio showcasing my background,
+                            skills, and professional journey.
+                        </p>
+                        <div class="tech-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <a href="https://github.com/basharfayad/bashar-portfolio"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-link"
+                           data-en="View Source ↗" data-ar="عرض الكود ↗">
+                            View Source ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card coming-soon">
+                    <div class="project-visual project-visual-two">
+                        <span>02</span>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-type" data-en="UPCOMING PROJECT" data-ar="مشروع قادم">
+                            UPCOMING PROJECT
+                        </p>
+                        <h3 data-en="Something New" data-ar="مشروع جديد">
+                            Something New
+                        </h3>
+                        <p data-en="Exploring new ideas and building the next project. Stay tuned."
+                           data-ar="أستكشف أفكاراً جديدة وأعمل على مشروعي القادم. ترقبوا المزيد.">
+                            Exploring new ideas and building the next project.
+                            Stay tuned.
+                        </p>
+                        <div class="tech-tags">
+                            <span>Coming</span><span>Soon</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- LANGUAGES -->
+        <section class="section language-section">
+            <div class="section-heading">
+                <p class="eyebrow" data-en="COMMUNICATION" data-ar="التواصل">COMMUNICATION</p>
+                <h2 data-en="Languages I <span>Speak</span>" data-ar="اللغات التي <span>أتحدثها</span>">
+                    Languages I <span>Speak</span>
+                </h2>
+            </div>
+            <div class="language-list">
+                <div><span data-en="Arabic" data-ar="العربية">Arabic</span><strong data-en="Native" data-ar="اللغة الأم">Native</strong></div>
+                <div><span data-en="English" data-ar="الإنجليزية">English</span><strong data-en="Fluent" data-ar="متقدم">Fluent</strong></div>
+                <div><span data-en="Turkish" data-ar="التركية">Turkish</span><strong>B1 – Intermediate</strong></div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+            <p class="eyebrow" data-en="LET'S CONNECT" data-ar="لنتواصل">LET'S CONNECT</p>
+            <h2 data-en="Have a project in <span>mind?</span>"
+                data-ar="هل لديك مشروع في <span>ذهنك؟</span>">
+                Have a project in <span>mind?</span>
+            </h2>
+            <p data-en="I'm always interested in new opportunities, collaborations, and exciting challenges."
+               data-ar="أنا مهتم دائماً بالفرص الجديدة والتعاون والتحديات التقنية المميزة.">
+                I'm always interested in new opportunities, collaborations,
+                and exciting challenges.
+            </p>
+            <a href="https://github.com/basharfayad"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               data-en="Connect on GitHub ↗" data-ar="تواصل عبر GitHub ↗">
+                Connect on GitHub ↗
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#home" class="logo">BF<span>.</span></a>
+        <p>© <span id="year"></span> Bashar Fayad.
+            <span data-en="Designed & Built with passion."
+                  data-ar="صُمم وطُوّر بكل شغف.">
+                Designed & Built with passion.
+            </span>
+        </p>
+    </footer>
+
+<script type="module" src="./robot3d.js"></script>
+
+<div id="skill-modal" class="skill-modal" aria-hidden="true">
+    <div class="skill-modal-content">
+        <button id="close-skill-modal" class="skill-modal-close" aria-label="Close">
+            &times;
+        </button>
+
+        <div id="skill-3d-view">
+            <canvas id="skill-canvas"></canvas>
+        </div>
+
+        <div class="skill-modal-info">
+            <span id="skill-category">3D TECHNOLOGY</span>
+            <h2 id="skill-title">Blender</h2>
+            <p id="skill-description">
+                3D modeling, rendering and creative design.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="./skills3d.js"></script>
 
 </body>
+ <canvas id="ambient-canvas"></canvas>
 
-<button onclick="sayHello()">Click Me!</button>
+    <div class="ambient ambient-one"></div>
 
-<p id="message"></p>
-<h1 id="developerName"></h1>
-<h2 id="developerJob"></h2>
+    <script type="module" src="./ambient3d.js"></script>
 </html>
-<button onclick="welcomeMessage()">Welcome</button>
-
-<p id="welcome"></p>

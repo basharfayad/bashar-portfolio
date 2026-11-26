@@ -1,66 +1,80 @@
 
-let name = "Bashar";
+// Language switcher
+const languageToggle = document.getElementById("languageToggle");
 
-console.log("Hello " + name);
+let currentLanguage = localStorage.getItem("portfolio-language") || "en";
 
-let age = 22;
+function updateLanguage() {
+    document.documentElement.lang = currentLanguage;
+    document.documentElement.dir =
+        currentLanguage === "ar" ? "rtl" : "ltr";
 
-console.log("My age is " + age);
+    document.body.dir =
+        currentLanguage === "ar" ? "rtl" : "ltr";
 
-function sayHello() {
-    document.getElementById("message").innerText =
-        "Welcome to my portfolio, Bashar!";
+    document.querySelectorAll("[data-en][data-ar]").forEach(element => {
+        element.innerHTML = element.dataset[currentLanguage];
+    });
+
+    languageToggle.textContent =
+        currentLanguage === "en" ? "عربي" : "English";
+
+    localStorage.setItem("portfolio-language", currentLanguage);
 }
 
-let developer = "Bashar";
-let country = "Palestine";
-let profession = "Software Engineer";
+languageToggle.addEventListener("click", () => {
+    currentLanguage = currentLanguage === "en" ? "ar" : "en";
+    updateLanguage();
+});
 
-console.log("My name is " + developer);
-console.log("I live in " + country);
-console.log("My profession is " + profession);
+updateLanguage();
 
-function greetUser(name) {
-    console.log("Welcome " + name);
-}
 
-greetUser("Bashar");
-greetUser("Ahmed");
-greetUser("Mohammed");
+// Mobile navigation
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-function welcomeMessage() {
-    document.getElementById("welcome").innerText =
-        "Welcome to Bashar Fayad's Portfolio!";
-}
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuBtn.textContent =
+        navLinks.classList.contains("active") ? "✕" : "☰";
+});
 
-function greetVisitor() {
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+    });
+});
 
-    let name = document.getElementById("visitorName").value;
 
-    if (name === "") {
-        document.getElementById("visitorMessage").innerText =
-            "Please enter your name!";
-    } else {
-        document.getElementById("visitorMessage").innerText =
-            "Welcome " + name + "! Thanks for visiting.";
-    }
+// Automatic footer year
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-}
-// My Technical Skills
 
-let mySkills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Git",
-    "GitHub",
-    "Problem Solving"
-];
+// Scroll reveal animation
+const revealElements = document.querySelectorAll(
+    ".section-heading, .about-card, .stat-card, .skill-card, " +
+    ".timeline-item, .education-card, .project-card, .language-list, " +
+    ".contact-section"
+);
 
-let skillsContainer = document.getElementById("skillsList");
+revealElements.forEach(element => {
+    element.classList.add("reveal");
+});
 
-for (let i = 0; i < mySkills.length; i++) {
-    let skillItem = document.createElement("li");
-    skillItem.innerText = mySkills[i];
-    skillsContainer.appendChild(skillItem);
-}
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+revealElements.forEach(element => observer.observe(element));
+
+console.log("Bashar Fayad Portfolio is ready!");
